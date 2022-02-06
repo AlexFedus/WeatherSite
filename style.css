@@ -1,1 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("https://source.unsplash.com/featured/1600x900/?landscape");
+}
 
+.box{
+    background-color: #000000d0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 30pt;
+}
+
+#form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+button{
+    margin: 1em;
+    border-radius: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#query{
+    border-radius: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Weather{
+    font-style: italic;
+}
