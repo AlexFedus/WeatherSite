@@ -46,3 +46,11 @@ button{
 .Weather{
     font-style: italic;
 }
+
+.temperature{
+    font-size: 23pt;
+}
+
+.description{
+    font-size: 15pt;
+}
