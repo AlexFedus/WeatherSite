@@ -24,7 +24,7 @@ h1{
     font-size: 30pt;
 }
 
-#form{
+.form{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,7 @@ button{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#query{
+.searchBar{
     border-radius: 2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

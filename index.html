@@ -3,7 +3,7 @@
 <head>
     <title>Weather App</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 
 
@@ -14,17 +14,19 @@
             Weather
         </h1>
         
-        <form id = "form">
-            <input type = "search" id = "query" name = "q"
+        <div class = "form">
+            <input type = "text" class = "searchBar"
             placeholder="Search...">
-            <button>Search</button>
-        </form>
+            <button class="button">Search</button>
+        </div>
 
         <div class="Weather">
-            <h2 class="city"> Indiana</h2>
-            <div class="temp"> 30 &#8457;</div>
-            <div class="humidity"> 30 %</div>
-            <div class="wind"> 10 MPH</div>
+            <h2 class="city"> </h2>
+            <div class="temperature"></div>
+            <img src ="" alt="" class="icon" />
+            <div class="description"></div>
+            <div class="humidity"> </div>
+            <div class="speed"> </div>
         </div>
     </div>
 
