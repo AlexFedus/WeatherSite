@@ -43,6 +43,8 @@ let weather = {
         document.querySelector(".temperature").innerText = temp + " \u2109";
         document.querySelector(".humidity").innerText = "Humididy: " + humidity + "%";
         document.querySelector(".speed").innerText = "Wind: " + speed + " MPH";
+
+        document.getElementById("forecast").style.visibility = "visible"; 
    },
 
 

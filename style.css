@@ -34,7 +34,13 @@ h1{
 
 
 
-button{
+.button{
+    margin: 1em;
+    border-radius: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.location{
     margin: 1em;
     border-radius: 2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,4 +61,12 @@ button{
 
 .description{
     font-size: 15pt;
+}
+
+#forecast{
+    visibility: hidden;
+    margin: 1em;
+    border-radius: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
