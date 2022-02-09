@@ -1,6 +1,9 @@
-getLocation()
 
-function getLocation(){
+let weather = {
+   "apiKey": "69087aca4a5504e05b12280a1a13a322",
+
+
+   getLocation: function(){
     navigator.geolocation.getCurrentPosition((success) => {
         console.log(success);
 
@@ -10,15 +13,8 @@ function getLocation(){
             "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=imperial&appid="+ weather.apiKey
         ).then((response) =>  response.json())
         .then((data) => weather.displayWeather(data));
-    
-
     })
-}
-    
-let weather = {
-   "apiKey": "69087aca4a5504e05b12280a1a13a322",
-
-
+   },
     
    fetchWeather: function (city) {
        
@@ -54,12 +50,21 @@ let weather = {
 
    search: function() {
        this.fetchWeather(document.querySelector(".searchBar").value);
-   }
+   },
+
+   search2: function() {
+    this.getLocation();
+}
 
 };
 
 document.querySelector(".button").addEventListener("click", function () {
     weather.search();
+
+})
+
+document.querySelector(".location").addEventListener("click", function () {
+    weather.getLocation();
 
 })
 
