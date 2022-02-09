@@ -5,6 +5,7 @@ let weather = {
 
    getLocation: function(){
     navigator.geolocation.getCurrentPosition((success) => {
+        document.getElementById("box2").style.visibility = "hidden";
         console.log(success);
 
         let {latitude, longitude} = success.coords;
