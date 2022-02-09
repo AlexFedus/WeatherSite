@@ -51,12 +51,22 @@ let weather = {
 
 
    search: function() {
+       document.getElementById("box2").style.visibility = "hidden";
        this.fetchWeather(document.querySelector(".searchBar").value);
    },
 
    search2: function() {
-    this.getLocation();
-}
+        document.getElementById("box2").style.visibility = "hidden";
+        this.getLocation();
+   },
+
+
+   showForcast: function(){
+        document.getElementById("box2").style.visibility = "visible";
+
+   }
+
+
 
 };
 
@@ -67,6 +77,11 @@ document.querySelector(".button").addEventListener("click", function () {
 
 document.querySelector(".location").addEventListener("click", function () {
     weather.getLocation();
+
+})
+
+document.querySelector("#forecast").addEventListener("click", function () {
+    weather.showForcast();
 
 })
 
