@@ -56,36 +56,35 @@ let weather = {
             "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid="+ this.apiKey
         ).then((response2) =>  response2.json())
         .then((data2) => 
-        //console.log(data2)
-        this.displayForcast(data2));
+        //console.log(data2))
+        weather.displayForcast(data2));
         
    },
 
    displayForcast: function(data2) {
         
+        //temperatures
+        document.querySelector(".city1").innerText = Number(data2.list[0].main.temp).toFixed(1);
+        document.querySelector(".city2").innerText = Number(data2.list[1].main.temp).toFixed(1);
+        document.querySelector(".city3").innerText = Number(data2.list[2].main.temp).toFixed(1);
 
-        //for(i=0;i<3;i++){
+        //icons
+        document.querySelector(".icon1").src = "https://openweathermap.org/img/wn/" + data2.list[0].weather[0].icon + "@2x.png";
+        document.querySelector(".icon2").src = "https://openweathermap.org/img/wn/" + data2.list[1].weather[0].icon + "@2x.png";
+        document.querySelector(".icon3").src = "https://openweathermap.org/img/wn/" + data2.list[2].weather[0].icon + "@2x.png";
 
-            const { name2 } = data2.city.name;
-            //const { icon2} = data2.list[i].weather[0].icon;
-            //const { description2} = data.list.weather;
-            var { temp2 } = data2.list[0].main.temp;
-            //var { speed2 } = data.wind;
+        //descriptions
+        document.querySelector(".description1").innerText = data2.list[0].weather[0].description;
+        document.querySelector(".description2").innerText = data2.list[1].weather[0].description;
+        document.querySelector(".description3").innerText = data2.list[2].weather[0].description;
 
-            //console.log(temp2);
+        //humidity
+        document.querySelector(".humidity1").innerText = data2.list[0].main.humidity + "%";
+        document.querySelector(".humidity2").innerText = data2.list[1].main.humidity + "%";
+        document.querySelector(".humidity3").innerText = data2.list[2].main.humidity + "%";
+
+       
         
-        
-            //temp2 = temp2.toFixed(1);
-
-            document.querySelector(".city1").innerText = "Weather in " + name2;
-            //document.querySelector(".icon1").src = "https://openweathermap.org/img/wn/"+ icon2 + "@2x.png";
-            //document.querySelector(".description").innerText = description2;
-            document.querySelector(".temperature1").innerText = temp2 + " \u2109";
-            //document.querySelector(".humidity").innerText = "Humididy: " + humidity2 + "%";
-            //document.querySelector(".speed").innerText = "Wind: " + speed2 + " MPH";
-        
-            //console.log(name2);
-        //}
    },
 
 
