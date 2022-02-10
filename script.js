@@ -4,7 +4,7 @@ let weather = {
 
 
    getLocation: function(){
-    navigator.geolocation.getCurrentPosition((success) => {
+        navigator.geolocation.getCurrentPosition((success) => {
         document.getElementById("box2").style.visibility = "hidden";
         console.log(success);
 
@@ -22,7 +22,10 @@ let weather = {
        fetch( 
            "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid="+ this.apiKey
        ).then((response) =>  response.json())
-       .then((data) => this.displayWeather(data));
+       .then((data) => 
+       
+       this.displayWeather(data));
+       
    },
 
    displayWeather: function(data) {
@@ -46,6 +49,43 @@ let weather = {
         document.querySelector(".speed").innerText = "Wind: " + speed + " MPH";
 
         document.getElementById("forecast").style.visibility = "visible"; 
+   },
+
+   fetchForcast: function (city){
+        fetch( 
+            "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid="+ this.apiKey
+        ).then((response2) =>  response2.json())
+        .then((data2) => 
+        //console.log(data2)
+        this.displayForcast(data2));
+        
+   },
+
+   displayForcast: function(data2) {
+        
+
+        //for(i=0;i<3;i++){
+
+            const { name2 } = data2.city.name;
+            //const { icon2} = data2.list[i].weather[0].icon;
+            //const { description2} = data.list.weather;
+            var { temp2 } = data2.list[0].main.temp;
+            //var { speed2 } = data.wind;
+
+            //console.log(temp2);
+        
+        
+            //temp2 = temp2.toFixed(1);
+
+            document.querySelector(".city1").innerText = "Weather in " + name2;
+            //document.querySelector(".icon1").src = "https://openweathermap.org/img/wn/"+ icon2 + "@2x.png";
+            //document.querySelector(".description").innerText = description2;
+            document.querySelector(".temperature1").innerText = temp2 + " \u2109";
+            //document.querySelector(".humidity").innerText = "Humididy: " + humidity2 + "%";
+            //document.querySelector(".speed").innerText = "Wind: " + speed2 + " MPH";
+        
+            //console.log(name2);
+        //}
    },
 
 
@@ -83,6 +123,8 @@ document.querySelector(".location").addEventListener("click", function () {
 
 document.querySelector("#forecast").addEventListener("click", function () {
     weather.showForcast();
+    weather.fetchForcast(document.querySelector(".searchBar").value);
+    
 
 })
 
