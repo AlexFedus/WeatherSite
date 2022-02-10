@@ -1,3 +1,4 @@
+var id = "";
 
 let weather = {
    "apiKey": "69087aca4a5504e05b12280a1a13a322",
@@ -23,12 +24,18 @@ let weather = {
            "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid="+ this.apiKey
        ).then((response) =>  response.json())
        .then((data) => 
-       
+       //this.getID(data),
        this.displayWeather(data));
        
    },
 
+  
+
    displayWeather: function(data) {
+    
+
+        id = data.id;
+        console.log(id);
         const { name } = data;
         const { icon, description } = data.weather[0];
         var { temp, humidity } = data.main;
@@ -49,14 +56,15 @@ let weather = {
         document.querySelector(".speed").innerText = "Wind: " + speed + " MPH";
 
         document.getElementById("forecast").style.visibility = "visible"; 
+
+        
    },
 
-   fetchForcast: function (city){
+   fetchForcast: function (id){
         fetch( 
-            "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid="+ this.apiKey
+            "https://api.openweathermap.org/data/2.5/forecast?id=" + id + "&units=imperial&appid="+ this.apiKey
         ).then((response2) =>  response2.json())
         .then((data2) => 
-        //console.log(data2))
         weather.displayForcast(data2));
         
    },
@@ -82,6 +90,10 @@ let weather = {
         document.querySelector(".humidity1").innerText = data2.list[0].main.humidity + "%";
         document.querySelector(".humidity2").innerText = data2.list[1].main.humidity + "%";
         document.querySelector(".humidity3").innerText = data2.list[2].main.humidity + "%";
+
+        document.querySelector(".speed1").innerText = Number(data2.list[0].wind.speed).toFixed(1) + "MPH";
+        document.querySelector(".speed2").innerText = Number(data2.list[1].wind.speed).toFixed(1) + "MPH";
+        document.querySelector(".speed3").innerText = Number(data2.list[2].wind.speed).toFixed(1) + "MPH";
 
        
         
@@ -122,7 +134,7 @@ document.querySelector(".location").addEventListener("click", function () {
 
 document.querySelector("#forecast").addEventListener("click", function () {
     weather.showForcast();
-    weather.fetchForcast(document.querySelector(".searchBar").value);
+    weather.fetchForcast(id);
     
 
 })
