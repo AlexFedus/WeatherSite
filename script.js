@@ -87,13 +87,13 @@ let weather = {
         document.querySelector(".description3").innerText = data2.list[2].weather[0].description;
 
         //humidity
-        document.querySelector(".humidity1").innerText = data2.list[0].main.humidity + "%";
-        document.querySelector(".humidity2").innerText = data2.list[1].main.humidity + "%";
-        document.querySelector(".humidity3").innerText = data2.list[2].main.humidity + "%";
+        document.querySelector(".humidity1").innerText = "Humidity: " + data2.list[0].main.humidity + " %";
+        document.querySelector(".humidity2").innerText = "Humidity: " + data2.list[1].main.humidity + " %";
+        document.querySelector(".humidity3").innerText = "Humidity: " + data2.list[2].main.humidity + " %";
 
-        document.querySelector(".speed1").innerText = Number(data2.list[0].wind.speed).toFixed(1) + "MPH";
-        document.querySelector(".speed2").innerText = Number(data2.list[1].wind.speed).toFixed(1) + "MPH";
-        document.querySelector(".speed3").innerText = Number(data2.list[2].wind.speed).toFixed(1) + "MPH";
+        document.querySelector(".speed1").innerText = "Wind: " + Number(data2.list[0].wind.speed).toFixed(1) + " MPH";
+        document.querySelector(".speed2").innerText = "Wind: " + Number(data2.list[1].wind.speed).toFixed(1) + " MPH";
+        document.querySelector(".speed3").innerText = "Wind: " + Number(data2.list[2].wind.speed).toFixed(1) + " MPH";
 
        
         
