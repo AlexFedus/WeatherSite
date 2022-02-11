@@ -6,11 +6,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
-    
-    
-    
     margin: auto;
     width: 50%;
     background-image: url(images/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg);
@@ -25,7 +20,8 @@ body{
     border-radius: 30px;
     width: 100%;
     max-width: 400px;
-    margin: 1em;
+    margin-top: 2em;
+    
     
 }
 
@@ -38,7 +34,9 @@ body{
     border-radius: 30px;
     width: 100%;
     max-width: 400px;
-    margin: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    
     visibility: hidden;
     
 }

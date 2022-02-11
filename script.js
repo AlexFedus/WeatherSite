@@ -72,9 +72,9 @@ let weather = {
    displayForcast: function(data2) {
         
         //temperatures
-        document.querySelector(".city1").innerText = Number(data2.list[0].main.temp).toFixed(1);
-        document.querySelector(".city2").innerText = Number(data2.list[1].main.temp).toFixed(1);
-        document.querySelector(".city3").innerText = Number(data2.list[2].main.temp).toFixed(1);
+        document.querySelector(".temperature1").innerText = Number(data2.list[0].main.temp).toFixed(1) + " \u2109";
+        document.querySelector(".temperature2").innerText = Number(data2.list[1].main.temp).toFixed(1) + " \u2109";
+        document.querySelector(".temperature3").innerText = Number(data2.list[2].main.temp).toFixed(1) + " \u2109";
 
         //icons
         document.querySelector(".icon1").src = "https://openweathermap.org/img/wn/" + data2.list[0].weather[0].icon + "@2x.png";
