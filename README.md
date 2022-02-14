@@ -1,5 +1,5 @@
 # WeatherSite
-    This is a simple weather site that can show a few different  weather statistics for a specific city. 
+    This is a simple weather site that can show\ a few different  weather statistics for a specific city. 
 # Introduction
     The idea to create this project can be credited to a youtube video that I watched. I saw a video tutorial of a weather app built with html, css, and javascript. I decided to take the idea and create my own project. Therefore, every single feature of this project is not an original idea from myself. 
 
