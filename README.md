@@ -33,5 +33,5 @@
 
 ## How to View
 
-    This site is available to use at [here](https://alexfedus.github.io/WeatherSite/)
+    This site is available to use at (https://alexfedus.github.io/WeatherSite/)
 
