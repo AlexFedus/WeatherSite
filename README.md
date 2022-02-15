@@ -1,7 +1,7 @@
 # WeatherSite
      This is a simple weather site that can show  
      a few different  weather statistics for a specific city. 
-# Introduction
+## Introduction
      The idea to create this project can be credited to a youtube  
      video that I watched. I saw a video tutorial of a weather  
      app built with html, css, and javascript. I decided to take  
@@ -9,7 +9,7 @@
      single feature of this project is not an original idea  
      from myself. 
 
-# Features
+## Features
      This weather site allows the user to enter a city name, or  
      click a button to allow the browser to get the user's  
      current  location. From there the site shows various  
@@ -22,10 +22,10 @@
      same information that was mentioned above for the  
      next 3  days.
 
-# Tools Used
+## Tools Used
     To obtain the weather information, I used the api from 
     (www.openweathermap.org)
 
-# How to View
+## How to View
     This site is available to use at (https://alexfedus.github.io/WeatherSite/)
 
