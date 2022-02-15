@@ -24,8 +24,8 @@
 
 # Tools Used
     To obtain the weather information, I used the api from 
-    www.openweathermap.org
+    <www.openweathermap.org>
 
 # How to View
-    This site is available to use at https://alexfedus.github.io/WeatherSite/
+    This site is available to use at <https://alexfedus.github.io/WeatherSite/>
 
