@@ -2,7 +2,6 @@
 
 body{
     display: flex;
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -10,6 +9,7 @@ body{
     width: 50%;
     background-image: url(images/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg);
 }
+
 
 .box {
     text-align: center;
@@ -21,8 +21,7 @@ body{
     width: 100%;
     max-width: 400px;
     margin-top: 2em;
-    
-    
+     
 }
 
 #box2{
@@ -55,7 +54,6 @@ h1{
 
 
 }
-
 
 
 .button{
