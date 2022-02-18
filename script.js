@@ -7,7 +7,7 @@ let weather = {
     getLocation: function () {
         navigator.geolocation.getCurrentPosition((success) => {
             document.getElementById("box2").style.visibility = "hidden";
-            console.log(success);
+            
 
             let { latitude, longitude } = success.coords;
 
@@ -30,36 +30,22 @@ let weather = {
     },
 
 
-
     // Function to display weather information
     displayWeather: function (data) {
-
-
         id = data.id;
-        console.log(id);
-        const { name } = data;
-        const { icon, description } = data.weather[0];
-        var { temp, humidity } = data.main;
-        var { speed } = data.wind;
 
-
-        temp = temp.toFixed(1);
-
-
-
-
-
-        document.querySelector(".city").innerText = "Weather in " + name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-        document.querySelector(".description").innerText = description;
-        document.querySelector(".temperature").innerText = temp + " \u2109";
-        document.querySelector(".humidity").innerText = "Humididy: " + humidity + "%";
-        document.querySelector(".speed").innerText = "Wind: " + speed + " MPH";
+        document.querySelector(".city").innerText = "Weather in " + data.name;
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+        document.querySelector(".description").innerText = data.weather[0].description;
+        document.querySelector(".temperature").innerText = Number(data.main.temp).toFixed(1) + " \u2109";
+        document.querySelector(".humidity").innerText = "Humididy: " + data.main.humidity + "%";
+        document.querySelector(".speed").innerText = "Wind: " + data.wind.speed + " MPH";
 
         document.getElementById("forecast").style.visibility = "visible";
 
 
     },
+
 
     // Function to get the forecast from the api.
     fetchForcast: function (id) {
@@ -94,6 +80,7 @@ let weather = {
         document.querySelector(".humidity2").innerText = "Humidity: " + data2.list[1].main.humidity + " %";
         document.querySelector(".humidity3").innerText = "Humidity: " + data2.list[2].main.humidity + " %";
 
+        //wind speed
         document.querySelector(".speed1").innerText = "Wind: " + Number(data2.list[0].wind.speed).toFixed(1) + " MPH";
         document.querySelector(".speed2").innerText = "Wind: " + Number(data2.list[1].wind.speed).toFixed(1) + " MPH";
         document.querySelector(".speed3").innerText = "Wind: " + Number(data2.list[2].wind.speed).toFixed(1) + " MPH";
@@ -144,15 +131,6 @@ document.querySelector(".location").addEventListener("click", function () {
 document.querySelector("#forecast").addEventListener("click", function () {
     weather.showForcast();
     weather.fetchForcast(id);
-
-
-})
-
-//
-document.querySelector(".button").addEventListener("keyup", function (event) {
-    if (event.key == "Enter" || event.keyCode == 13) {
-        weather.search();
-    }
 
 
 })
