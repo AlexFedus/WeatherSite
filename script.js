@@ -37,7 +37,9 @@ let weather = {
         document.querySelector(".city").innerText = "Weather in " + data.name;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
         document.querySelector(".description").innerText = data.weather[0].description;
-        document.querySelector(".temperature").innerText = Number(data.main.temp).toFixed(1) + " \u2109";
+        document.querySelector(".temperature").innerText = Number(data.main.temp).toFixed(1) + " \u2109" ;
+        document.querySelector(".mintemp").innerText = Number(data.main.temp_min).toFixed(1) + " \u2109" + " - ";
+        document.querySelector(".maxtemp").innerText = Number(data.main.temp_max).toFixed(1) + " \u2109";
         document.querySelector(".humidity").innerText = "Humididy: " + data.main.humidity + "%";
         document.querySelector(".speed").innerText = "Wind: " + data.wind.speed + " MPH";
 
@@ -64,6 +66,15 @@ let weather = {
         document.querySelector(".temperature1").innerText = Number(data2.list[0].main.temp).toFixed(1) + " \u2109";
         document.querySelector(".temperature2").innerText = Number(data2.list[1].main.temp).toFixed(1) + " \u2109";
         document.querySelector(".temperature3").innerText = Number(data2.list[2].main.temp).toFixed(1) + " \u2109";
+
+        //min and max forecast temperatures
+        document.querySelector(".mintemp1").innerText = Number(data2.list[0].main.temp_min).toFixed(1) + " \u2109" + " - ";
+        document.querySelector(".maxtemp1").innerText = Number(data2.list[0].main.temp_max).toFixed(1) + " \u2109";
+        document.querySelector(".mintemp2").innerText = Number(data2.list[1].main.temp_min).toFixed(1) + " \u2109" + " - ";
+        document.querySelector(".maxtemp2").innerText = Number(data2.list[1].main.temp_max).toFixed(1) + " \u2109";
+        document.querySelector(".mintemp3").innerText = Number(data2.list[2].main.temp_min).toFixed(1) + " \u2109" + " - ";
+        document.querySelector(".maxtemp3").innerText = Number(data2.list[2].main.temp_max).toFixed(1) + " \u2109";
+
 
         //icons
         document.querySelector(".icon1").src = "https://openweathermap.org/img/wn/" + data2.list[0].weather[0].icon + "@2x.png";
